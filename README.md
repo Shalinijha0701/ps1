@@ -1,3 +1,4 @@
+deployed: https://ps1-93r9.onrender.com/
 # Osto Cybersecurity Website
 
 A modern, enterprise-grade cybersecurity website built for Osto - revolutionizing startup security with 9-minute deployment technology.
