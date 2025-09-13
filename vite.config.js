@@ -85,6 +85,14 @@ export default defineConfig({
     open: true,
     host: true,
     cors: true,
+    // Allow hosts for production deployment
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'ps1-93r9.onrender.com',
+      '.onrender.com', // Allow all Render subdomains
+      ...(process.env.RENDER_EXTERNAL_URL ? [process.env.RENDER_EXTERNAL_URL.replace('https://', '').replace('http://', '')] : [])
+    ],
     // Enable HTTP/2 in development
     https: false,
     // Proxy configuration for API calls
@@ -99,7 +107,15 @@ export default defineConfig({
   preview: {
     port: 4173,
     host: true,
-    cors: true
+    cors: true,
+    // Allow hosts for production deployment
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'ps1-93r9.onrender.com',
+      '.onrender.com', // Allow all Render subdomains
+      ...(process.env.RENDER_EXTERNAL_URL ? [process.env.RENDER_EXTERNAL_URL.replace('https://', '').replace('http://', '')] : [])
+    ]
   },
   optimizeDeps: {
     include: [
