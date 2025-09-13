@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import TrustBadges from '../components/UI/TrustBadges'
 import CTASection from '../components/UI/CTASection'
+import AnimatedCounter from '../components/Animations/AnimatedCounter'
+import FAQAccordion from '../components/UI/FAQAccordion'
+import usePerformanceMonitor from '../hooks/usePerformanceMonitor'
 
 const LandingPage = () => {
+  usePerformanceMonitor()
   const valuePropositions = [
     {
       icon: "⚡",
@@ -236,9 +240,12 @@ const LandingPage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl lg:text-5xl font-bold text-primary-600 mb-2">
-                  {stat.number}
-                </div>
+                <AnimatedCounter
+                  end={parseInt(stat.number.replace(/[^0-9]/g, '')) || 0}
+                  suffix={stat.number.replace(/[0-9]/g, '')}
+                  className="text-4xl lg:text-5xl font-bold text-primary-600 mb-2"
+                  duration={2}
+                />
                 <div className="text-neutral-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -322,6 +329,28 @@ const LandingPage = () => {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-neutral-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="section-title">Frequently Asked Questions</h2>
+            <p className="section-subtitle">
+              Get answers to common questions about our cybersecurity solutions
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto">
+            <FAQAccordion />
           </div>
         </div>
       </section>

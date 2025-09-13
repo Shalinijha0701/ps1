@@ -144,3 +144,267 @@
     transform: rotate(360deg);
   }
 }
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.performance-boost {
+  contain: layout style paint;
+}
+
+/* Critical resource hints */
+.critical-resource {
+  font-display: swap;
+}
+
+/* Image optimization */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  content-visibility: auto;
+}
+
+/* Layout optimization */
+.layout-optimized {
+  contain: layout;
+}
+
+/* Paint optimization */
+.paint-optimized {
+  contain: paint;
+}
+
+/* Style optimization */
+.style-optimized {
+  contain: style;
+}
+
+/* Intersection observer optimization */
+.io-root {
+  contain: layout style paint;
+}
+
+/* Memory optimization */
+.memory-efficient {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Disable parallax and complex animations */
+  .parallax,
+  .complex-animation {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid currentColor;
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  /* Ensure sufficient contrast */
+  .text-primary-600 {
+    color: #1e40af !important;
+  }
+
+  .bg-primary-600 {
+    background-color: #1e40af !important;
+  }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --text-primary: #f8fafc;
+    --border-primary: #334155;
+  }
+}
+
+/* Focus visible support */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus styles */
+.focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-friendly {
+    color: black !important;
+    background: white !important;
+  }
+
+  /* Optimize for print */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .btn {
+    border: 1px solid black !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+/* Prefers reduced data */
+@media (prefers-reduced-data: reduce) {
+
+  /* Reduce heavy assets for users on limited data plans */
+  .heavy-image,
+  .background-video,
+  .auto-play-media {
+    display: none;
+  }
+
+  /* Disable non-essential animations */
+  .decorative-animation {
+    animation: none !important;
+  }
+}
+
+/* Better scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.neutral.100');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.primary.400');
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary.500');
+}
+
+::-webkit-scrollbar-corner {
+  background: theme('colors.neutral.100');
+}
+
+/* Better selection styles */
+::selection {
+  background-color: theme('colors.primary.100');
+  color: theme('colors.primary.900');
+}
+
+::-moz-selection {
+  background-color: theme('colors.primary.100');
+  color: theme('colors.primary.900');
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton loading animation */
+.skeleton {
+  background: linear-gradient(90deg,
+      theme('colors.neutral.200') 25%,
+      theme('colors.neutral.300') 50%,
+      theme('colors.neutral.200') 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pulse animation for loading states */
+.pulse-loading {
+  animation: pulse-loading 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-loading {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Safe area insets for mobile devices */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-area-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}

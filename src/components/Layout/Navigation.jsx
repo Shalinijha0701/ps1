@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import VisuallyHidden from '../Accessibility/VisuallyHidden'
+import FocusManager from '../Accessibility/FocusManager'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [showSolutions, setShowSolutions] = useState(false)
+  const [focusedSolutionIndex, setFocusedSolutionIndex] = useState(-1)
   const location = useLocation()
+  const navRef = useRef(null)
+  const mobileMenuRef = useRef(null)
+  const solutionsRef = useRef(null)
+  const solutionsTimeoutRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +28,47 @@ const Navigation = () => {
     setShowSolutions(false)
   }, [location])
 
+  // Enhanced escape key handling and focus management
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        if (showSolutions) {
+          setShowSolutions(false)
+          setFocusedSolutionIndex(-1)
+        } else if (isOpen) {
+          setIsOpen(false)
+        }
+      }
+    }
+
+    const handleClickOutside = (e) => {
+      if (solutionsRef.current && !solutionsRef.current.contains(e.target)) {
+        setShowSolutions(false)
+        setFocusedSolutionIndex(-1)
+      }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target) &&
+        !e.target.closest('[aria-label="Open mobile menu"]')) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen || showSolutions) {
+      document.addEventListener('keydown', handleEscape)
+      document.addEventListener('click', handleClickOutside)
+      if (isOpen) {
+        document.body.style.overflow = 'hidden'
+      }
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.removeEventListener('click', handleClickOutside)
+      document.body.style.overflow = ''
+    }
+  }, [isOpen, showSolutions])
+
   const solutionsItems = [
     { label: 'Endpoint Security', url: '/endpoint-security', description: 'Next-gen antimalware and device protection' },
     { label: 'Network Security', url: '/network-security', description: 'Zero-trust access and web filtering' },
@@ -28,13 +76,59 @@ const Navigation = () => {
     { label: 'Compliance & VAPT', url: '/compliance-vapt', description: 'Automated compliance and testing' }
   ]
 
+  // Enhanced keyboard navigation for solutions dropdown
+  const handleSolutionsKeyDown = (e) => {
+    if (!showSolutions) return
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault()
+        setFocusedSolutionIndex(prev =>
+          prev < solutionsItems.length - 1 ? prev + 1 : 0
+        )
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        setFocusedSolutionIndex(prev =>
+          prev > 0 ? prev - 1 : solutionsItems.length - 1
+        )
+        break
+      case 'Enter':
+      case ' ':
+        e.preventDefault()
+        if (focusedSolutionIndex >= 0) {
+          const item = solutionsItems[focusedSolutionIndex]
+          window.location.href = item.url
+        }
+        break
+      case 'Escape':
+        setShowSolutions(false)
+        setFocusedSolutionIndex(-1)
+        break
+    }
+  }
+
+  // Handle mouse and keyboard interactions for solutions
+  const handleSolutionsToggle = (show) => {
+    clearTimeout(solutionsTimeoutRef.current)
+    if (show) {
+      setShowSolutions(true)
+      setFocusedSolutionIndex(-1)
+    } else {
+      solutionsTimeoutRef.current = setTimeout(() => {
+        setShowSolutions(false)
+        setFocusedSolutionIndex(-1)
+      }, 150) // Small delay for better UX
+    }
+  }
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-medium'
-          : 'bg-transparent'
+        ? 'bg-white/95 backdrop-blur-md shadow-medium'
+        : 'bg-transparent'
         }`}
     >
       <div className="container-custom">
@@ -126,7 +220,9 @@ const Navigation = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 transition-colors duration-200"
-            aria-label="Toggle mobile menu"
+            aria-label={isOpen ? 'Close mobile menu' : 'Open mobile menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -142,11 +238,15 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              ref={mobileMenuRef}
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="lg:hidden bg-white border-t border-neutral-200 shadow-large"
+              role="menu"
+              aria-label="Mobile navigation menu"
             >
               <div className="px-4 py-6 space-y-4">
                 {/* Mobile Solutions */}
@@ -159,8 +259,10 @@ const Navigation = () => {
                       key={item.url}
                       to={item.url}
                       className="block pl-4 py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200"
+                      role="menuitem"
                     >
                       {item.label}
+                      <VisuallyHidden>{item.description}</VisuallyHidden>
                     </Link>
                   ))}
                 </div>
@@ -168,12 +270,14 @@ const Navigation = () => {
                 <Link
                   to="/about"
                   className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                  role="menuitem"
                 >
                   About
                 </Link>
                 <Link
                   to="/demo"
                   className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                  role="menuitem"
                 >
                   Demo
                 </Link>
