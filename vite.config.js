@@ -7,13 +7,7 @@ export default defineConfig({
   plugins: [
     react({
       // Enable React Fast Refresh
-      fastRefresh: true,
-      // Optimize production builds
-      babel: {
-        plugins: process.env.NODE_ENV === 'production' ? [
-          ['babel-plugin-react-remove-properties', { properties: ['data-testid'] }]
-        ] : []
-      }
+      fastRefresh: true
     })
   ],
   base: '/',
@@ -29,21 +23,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: process.env.NODE_ENV === 'development',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: process.env.NODE_ENV === 'production',
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info'],
-        passes: 2
-      },
-      mangle: {
-        safari10: true
-      },
-      format: {
-        comments: false
-      }
-    },
+    minify: 'esbuild', // Use esbuild instead of terser for faster builds
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -57,16 +37,16 @@ export default defineConfig({
             }
             return 'vendor'
           }
-          
+
           // Separate chunks for different app sections
           if (id.includes('src/pages/')) {
             return 'pages'
           }
-          
+
           if (id.includes('src/components/')) {
             return 'components'
           }
-          
+
           if (id.includes('src/hooks/') || id.includes('src/utils/')) {
             return 'utils'
           }
