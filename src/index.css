@@ -159,6 +159,77 @@
       linear-gradient(135deg, theme('colors.primary.500'), theme('colors.secondary.500')) border-box;
     border: 2px solid transparent;
   }
+
+  /* Cybersecurity Landing Page Specific Styles */
+  .cyber-grid-pattern {
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .cyber-glow {
+    box-shadow:
+      0 0 20px rgba(6, 182, 212, 0.3),
+      0 0 40px rgba(6, 182, 212, 0.1),
+      inset 0 0 20px rgba(6, 182, 212, 0.05);
+  }
+
+  .shield-glow {
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.6)) drop-shadow(0 0 40px rgba(6, 182, 212, 0.3));
+  }
+
+  /* Animated hexagon pattern */
+  .hex-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.03'%3E%3Cpath d='M30 5l15 9v18l-15 9-15-9V14z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Custom cyber animations */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes circuit-flow {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-circuit-flow {
+    animation: circuit-flow 3s linear infinite;
+  }
 }
 
 /* Custom scrollbar */
