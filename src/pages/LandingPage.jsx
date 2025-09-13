@@ -6,6 +6,10 @@ import CTASection from '../components/UI/CTASection'
 import AnimatedCounter from '../components/Animations/AnimatedCounter'
 import FAQAccordion from '../components/UI/FAQAccordion'
 import usePerformanceMonitor from '../hooks/usePerformanceMonitor'
+import { Button } from '../components/UI/Button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/UI/card'
+import { Badge } from '../components/UI/badge'
+import { Alert, AlertDescription, AlertTitle } from '../components/UI/alert'
 
 const LandingPage = () => {
   usePerformanceMonitor()
@@ -112,12 +116,16 @@ const LandingPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link to="/demo" className="btn-primary bg-white text-primary-600 hover:bg-neutral-100">
-                  Get Protected Now
-                </Link>
-                <Link to="/demo" className="btn bg-white/10 text-white border-white/20 hover:bg-white/20">
-                  Schedule Demo
-                </Link>
+                <Button asChild variant="cyber" size="lg">
+                  <Link to="/demo">
+                    Get Protected Now
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
+                  <Link to="/demo">
+                    Schedule Demo
+                  </Link>
+                </Button>
               </div>
 
               <TrustBadges className="justify-start" />
@@ -181,6 +189,28 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Security Status Alert Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <Alert variant="security" className="mb-6">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <AlertTitle>Real-Time Security Status</AlertTitle>
+              <AlertDescription>
+                Your cybersecurity infrastructure is continuously monitored. All systems are currently protected and operating normally.
+                <div className="flex gap-2 mt-3">
+                  <Badge variant="secure">All Systems Secure</Badge>
+                  <Badge variant="info">24/7 Monitoring Active</Badge>
+                  <Badge variant="protected">99.9% Uptime</Badge>
+                </div>
+              </AlertDescription>
+            </Alert>
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -205,11 +235,14 @@ const LandingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card text-center hover:shadow-large transform hover:-translate-y-2"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-neutral-600">{item.description}</p>
+                <Card className="text-center hover:shadow-large transform hover:-translate-y-2 transition-all duration-300">
+                  <CardHeader>
+                    <div className="text-4xl mb-4">{item.icon}</div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                    <CardDescription className="text-neutral-600">{item.description}</CardDescription>
+                  </CardHeader>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -260,24 +293,28 @@ const LandingPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="card"
               >
-                <div className="flex items-start mb-4">
-                  <div className="flex text-yellow-400 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <blockquote className="text-lg text-neutral-700 mb-4">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div>
-                  <div className="font-semibold text-neutral-900">{testimonial.author}</div>
-                  <div className="text-neutral-600">{testimonial.role}</div>
-                </div>
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex text-yellow-400 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <Badge variant="secure">Verified Customer</Badge>
+                    </div>
+                    <blockquote className="text-lg text-neutral-700 mb-4">
+                      "{testimonial.quote}"
+                    </blockquote>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="font-semibold text-neutral-900">{testimonial.author}</div>
+                    <div className="text-neutral-600">{testimonial.role}</div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -309,23 +346,28 @@ const LandingPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link
-                  to={feature.link}
-                  className="card group hover:shadow-large transform hover:-translate-y-2 transition-all duration-300 block"
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary-600 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-neutral-600 mb-4">{feature.description}</p>
-                  <div className="flex items-center text-primary-600 font-medium group-hover:text-primary-700">
-                    Learn more
-                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                <Link to={feature.link}>
+                  <Card className="group hover:shadow-large transform hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <CardHeader>
+                      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {feature.icon}
+                      </div>
+                      <CardTitle className="text-xl group-hover:text-primary-600 transition-colors duration-300">
+                        {feature.title}
+                      </CardTitle>
+                      <CardDescription className="text-neutral-600 mb-4">
+                        {feature.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <span className="text-primary-600 font-medium group-hover:text-primary-700">Learn more</span>
+                        <svg className="w-4 h-4 text-primary-600 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </Link>
               </motion.div>
             ))}

@@ -1,90 +1,49 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import LoadingSpinner from '../Animations/LoadingSpinner'
+import { Slot } from "@radix-ui/react-slot"
+import { cva } from "class-variance-authority"
+import { cn } from "@/lib/utils"
 
-const Button = ({
-  children,
-  variant = 'primary',
-  size = 'md',
-  isLoading = false,
-  disabled = false,
-  leftIcon,
-  rightIcon,
-  className = '',
-  onClick,
-  type = 'button',
-  ...props
-}) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
-
-  const variants = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-md hover:shadow-lg transform hover:-translate-y-0.5',
-    secondary: 'bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-50 focus:ring-primary-500',
-    outline: 'bg-transparent text-neutral-700 border border-neutral-300 hover:bg-neutral-50 focus:ring-neutral-500',
-    ghost: 'bg-transparent text-neutral-700 hover:bg-neutral-100 focus:ring-neutral-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-md hover:shadow-lg',
-    success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 shadow-md hover:shadow-lg'
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+        // Custom cybersecurity variants
+        cyber: "bg-gradient-to-r from-primary-600 to-secondary-500 text-white hover:from-primary-700 hover:to-secondary-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
+        shield: "bg-primary-800 text-white border border-primary-600 hover:bg-primary-700 shadow-md",
+        secure: "bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800"
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        xl: "h-12 rounded-lg px-10 text-base",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
   }
+)
 
-  const sizes = {
-    sm: 'px-3 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
-    xl: 'px-10 py-5 text-xl'
-  }
-
-  const isDisabled = disabled || isLoading
-
-  const handleClick = (e) => {
-    if (isDisabled) {
-      e.preventDefault()
-      return
-    }
-    onClick?.(e)
-  }
-
+const Button = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : "button"
   return (
-    <motion.button
-      type={type}
-      onClick={handleClick}
-      disabled={isDisabled}
-      whileHover={isDisabled ? {} : { scale: 1.02 }}
-      whileTap={isDisabled ? {} : { scale: 0.98 }}
-      className={`
-        ${baseClasses}
-        ${variants[variant]}
-        ${sizes[size]}
-        ${className}
-      `}
+    <Comp
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref}
       {...props}
-    >
-      {/* Left Icon */}
-      {leftIcon && !isLoading && (
-        <span className="mr-2 flex-shrink-0">
-          {leftIcon}
-        </span>
-      )}
-
-      {/* Loading Spinner */}
-      {isLoading && (
-        <span className="mr-2 flex-shrink-0">
-          <LoadingSpinner size="sm" color={variant === 'outline' || variant === 'ghost' ? 'neutral' : 'white'} />
-        </span>
-      )}
-
-      {/* Button Text */}
-      <span className={isLoading ? 'opacity-70' : ''}>
-        {children}
-      </span>
-
-      {/* Right Icon */}
-      {rightIcon && !isLoading && (
-        <span className="ml-2 flex-shrink-0">
-          {rightIcon}
-        </span>
-      )}
-    </motion.button>
+    />
   )
-}
+})
+Button.displayName = "Button"
 
-export default Button
+export { Button, buttonVariants }
