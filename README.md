@@ -415,19 +415,4 @@ The Osto cybersecurity website represents a comprehensive solution to the fundam
 
 This project demonstrates how thoughtful design, technical innovation, and deep market understanding can combine to create solutions that truly serve underserved markets. The startup cybersecurity space needs accessible, powerful tools, and Osto delivers exactly that through both product innovation and exceptional user experience.
 
----
-
-## 📞 Contact & Support
-
-- **Website**: [https://osto.com](https://osto.com)
-- **Email**: hello@osto.com
-- **Documentation**: [Technical documentation and API reference]
-- **Support**: 24/7 technical support for implementation questions
-
-**Contributing**: Please read our contributing guidelines before submitting pull requests.
-
-**License**: [Your license information here]
-
----
-
-*Built with ❤️ by the Osto team - Democratizing cybersecurity for startups worldwide.*
+ 
