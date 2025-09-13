@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://osto.one/sitemap.xml
+
+# Block common paths that don't exist or shouldn't be crawled
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /assets/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /endpoint-security
+Allow: /network-security
+Allow: /cloud-security
+Allow: /compliance-vapt
+Allow: /about
+Allow: /demo
+
+# Crawl delay (optional)
+Crawl-delay: 1
