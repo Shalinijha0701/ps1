@@ -27,10 +27,10 @@ import { useRoutePreloader, useDNSPrefetch } from './hooks/useResourcePreloader'
 
 // Loading fallback component
 const PageLoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-neutral-50">
+  <div className="min-h-screen flex items-center justify-center bg-black">
     <div className="text-center">
       <LoadingSpinner size="lg" />
-      <p className="mt-4 text-neutral-600">Loading page...</p>
+      <p className="mt-4 text-gray-300">Loading page...</p>
     </div>
   </div>
 )
@@ -67,7 +67,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-black">
         <SkipLink />
         <SEOHead />
         <ScrollToTop />

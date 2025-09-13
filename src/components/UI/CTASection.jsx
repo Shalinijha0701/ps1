@@ -17,7 +17,7 @@ const CTASection = () => {
               Ready to Secure Your Business?
             </h2>
             <p className="section-subtitle text-blue-100 mb-8">
-              Join hundreds of startups that trust Osto.one for their cybersecurity needs
+              Join hundreds of startups that trust Osto for their cybersecurity needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

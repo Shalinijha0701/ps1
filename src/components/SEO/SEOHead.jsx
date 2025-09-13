@@ -7,38 +7,38 @@ const SEOHead = () => {
   useEffect(() => {
     const pageMetadata = {
       '/': {
-        title: 'Osto.one - Enterprise-Grade Cybersecurity for Startups',
+        title: 'Osto - Enterprise-Grade Cybersecurity for Startups',
         description: 'Complete endpoint, network, and cloud protection deployed in 9 minutes vs traditional weeks. Enterprise security made simple for startups.',
         keywords: 'cybersecurity for startups, endpoint security, network security, cloud security, enterprise protection'
       },
       '/endpoint-security': {
-        title: 'Endpoint Security | Osto.one - Cybersecurity for Startups',
+        title: 'Endpoint Security | Osto - Cybersecurity for Startups',
         description: 'Advanced endpoint protection with next-gen antimalware, device control, application control, and DLP for startups.',
         keywords: 'endpoint security, antimalware, device control, application control, DLP, endpoint protection'
       },
       '/network-security': {
-        title: 'Network Security | Osto.one - Cybersecurity for Startups',
+        title: 'Network Security | Osto - Cybersecurity for Startups',
         description: 'Zero-trust network access, advanced web filtering, and traffic analysis for comprehensive network protection.',
         keywords: 'network security, zero trust, ZTNA, web filtering, traffic analysis, network protection'
       },
       '/cloud-security': {
-        title: 'Cloud Security | Osto.one - Cybersecurity for Startups',
+        title: 'Cloud Security | Osto - Cybersecurity for Startups',
         description: 'Three-layer cloud protection with app security, vulnerability scanners, and posture management.',
         keywords: 'cloud security, app protection, vulnerability scanning, security posture management, cloud protection'
       },
       '/compliance-vapt': {
-        title: 'Compliance & VAPT | Osto.one - Cybersecurity for Startups',
+        title: 'Compliance & VAPT | Osto - Cybersecurity for Startups',
         description: 'Automated compliance management, security questionnaires, and professional penetration testing services.',
         keywords: 'compliance, VAPT, penetration testing, security assessment, SOC 2, ISO 27001, GDPR'
       },
       '/about': {
-        title: 'About Us | Osto.one - Cybersecurity for Startups',
-        description: 'Learn about Osto.one\'s mission to democratize enterprise-grade cybersecurity for startups and growing businesses.',
-        keywords: 'about osto.one, cybersecurity company, startup security, team, mission, vision'
+        title: 'About Us | Osto - Cybersecurity for Startups',
+        description: 'Learn about Osto\'s mission to democratize enterprise-grade cybersecurity for startups and growing businesses.',
+        keywords: 'about osto, cybersecurity company, startup security, team, mission, vision'
       },
       '/demo': {
-        title: 'Demo & Free Trial | Osto.one - Cybersecurity for Startups',
-        description: 'Experience Osto.one security with a personalized demo or start your 14-day free trial today.',
+        title: 'Demo & Free Trial | Osto - Cybersecurity for Startups',
+        description: 'Experience Osto security with a personalized demo or start your 14-day free trial today.',
         keywords: 'demo, free trial, cybersecurity demo, security assessment, schedule demo'
       }
     }

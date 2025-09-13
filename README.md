@@ -1,6 +1,6 @@
-# Osto.one Cybersecurity Website
+# Osto Cybersecurity Website
 
-A modern, responsive website built for Osto.one - a cybersecurity startup focused on providing enterprise-grade security solutions for startups.
+A modern, responsive website built for Osto - a cybersecurity startup focused on providing enterprise-grade security solutions for startups.
 
 ## 🚀 Features
 
@@ -115,4 +115,3 @@ The website has been tested across:
 - **Browsers**: Chrome, Firefox, Safari, Edge (latest 2 versions)
 - **Devices**: Mobile (320px+), Tablet (768px+), Desktop (1024px+)
 - **Performance**: Lighthouse audits and WebPageTest analysis
- 

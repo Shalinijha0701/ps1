@@ -53,10 +53,10 @@ const NetworkSecurity = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20"
+      className="min-h-screen pt-20 bg-black"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-slate-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -64,15 +64,15 @@ const NetworkSecurity = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="hero-title mb-6">
+              <h1 className="hero-title mb-6 text-white">
                 Zero-Trust Network Security
               </h1>
-              <p className="hero-subtitle mb-8">
+              <p className="hero-subtitle mb-8 text-gray-300">
                 Advanced network protection with real-time threat intelligence and identity-based access control
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-primary">Start Free Trial</button>
-                <button className="btn-secondary">Schedule Demo</button>
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">Start Free Trial</button>
+                <button className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">Schedule Demo</button>
               </div>
             </motion.div>
 
@@ -83,64 +83,64 @@ const NetworkSecurity = () => {
               className="relative"
             >
               {/* Network Topology Visualization */}
-              <div className="bg-white rounded-xl shadow-large p-6">
-                <h3 className="text-lg font-semibold mb-6">Network Security Overview</h3>
+              <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-6">
+                <h3 className="text-lg font-semibold mb-6 text-white">Network Security Overview</h3>
 
                 {/* Network diagram mockup */}
                 <div className="relative">
                   {/* Central hub */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center border-4 border-primary-500">
-                    <span className="text-primary-600 font-bold text-xs">ZTNA</span>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-cyan-900 rounded-full flex items-center justify-center border-4 border-cyan-400">
+                    <span className="text-cyan-300 font-bold text-xs">ZTNA</span>
                   </div>
 
                   {/* Connected devices */}
                   <div className="relative h-64 w-full">
                     {/* Laptop */}
-                    <div className="absolute top-4 left-8 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="absolute top-4 left-8 w-12 h-12 bg-green-900 border border-green-700 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm1 2v6h12V6H4z" clipRule="evenodd" />
                       </svg>
                     </div>
 
                     {/* Mobile */}
-                    <div className="absolute top-4 right-8 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="absolute top-4 right-8 w-12 h-12 bg-blue-900 border border-blue-700 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                       </svg>
                     </div>
 
                     {/* Server */}
-                    <div className="absolute bottom-4 left-8 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="absolute bottom-4 left-8 w-12 h-12 bg-purple-900 border border-purple-700 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd" />
                       </svg>
                     </div>
 
                     {/* Cloud */}
-                    <div className="absolute bottom-4 right-8 w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="absolute bottom-4 right-8 w-12 h-12 bg-cyan-900 border border-cyan-700 rounded-lg flex items-center justify-center">
+                      <svg className="w-6 h-6 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
                       </svg>
                     </div>
 
                     {/* Connection lines */}
                     <svg className="absolute inset-0 w-full h-full">
-                      <line x1="20%" y1="25%" x2="45%" y2="45%" stroke="#3b82f6" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
-                      <line x1="80%" y1="25%" x2="55%" y2="45%" stroke="#3b82f6" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
-                      <line x1="20%" y1="75%" x2="45%" y2="55%" stroke="#3b82f6" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
-                      <line x1="80%" y1="75%" x2="55%" y2="55%" stroke="#3b82f6" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
+                      <line x1="20%" y1="25%" x2="45%" y2="45%" stroke="#06b6d4" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
+                      <line x1="80%" y1="25%" x2="55%" y2="45%" stroke="#06b6d4" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
+                      <line x1="20%" y1="75%" x2="45%" y2="55%" stroke="#06b6d4" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
+                      <line x1="80%" y1="75%" x2="55%" y2="55%" stroke="#06b6d4" strokeWidth="2" strokeDasharray="5,5" className="animate-pulse" />
                     </svg>
                   </div>
                 </div>
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  <div className="bg-green-50 rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold text-green-600">4</div>
-                    <div className="text-xs text-neutral-600">Protected Devices</div>
+                  <div className="bg-green-900/30 border border-green-800 rounded-lg p-3 text-center">
+                    <div className="text-lg font-bold text-green-400">4</div>
+                    <div className="text-xs text-gray-300">Protected Devices</div>
                   </div>
-                  <div className="bg-blue-50 rounded-lg p-3 text-center">
-                    <div className="text-lg font-bold text-blue-600">100%</div>
-                    <div className="text-xs text-neutral-600">Secure Connections</div>
+                  <div className="bg-blue-900/30 border border-blue-800 rounded-lg p-3 text-center">
+                    <div className="text-lg font-bold text-blue-400">100%</div>
+                    <div className="text-xs text-gray-300">Secure Connections</div>
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ const NetworkSecurity = () => {
       </section>
 
       {/* Features Deep Dive */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -159,8 +159,8 @@ const NetworkSecurity = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Network Protection Features</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title text-white">Network Protection Features</h2>
+            <p className="section-subtitle text-gray-300">
               Comprehensive network security that adapts to modern threats and remote work
             </p>
           </motion.div>
@@ -177,58 +177,58 @@ const NetworkSecurity = () => {
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-4">{feature.name}</h3>
-                  <p className="text-lg text-neutral-600 mb-6">{feature.description}</p>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">{feature.name}</h3>
+                  <p className="text-lg text-gray-300 mb-6">{feature.description}</p>
 
                   <div className="space-y-3">
                     {feature.capabilities.map((capability, i) => (
                       <div key={i} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                        <span className="text-neutral-700">{capability}</span>
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                        <span className="text-gray-300">{capability}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl p-8">
-                    <div className="bg-white rounded-lg shadow-medium p-6">
+                  <div className="bg-gray-800 border border-gray-700 rounded-xl shadow-large p-6">
+                    <div className="bg-gray-900 rounded-lg p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <h4 className="font-semibold">{feature.name}</h4>
+                        <h4 className="font-semibold text-white">{feature.name}</h4>
                         <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                       </div>
 
                       {/* Mock interface based on feature type */}
                       {index === 0 && (
                         <div className="space-y-3">
-                          <div className="flex items-center justify-between p-3 bg-green-50 rounded">
-                            <span className="text-sm">john@startup.com</span>
-                            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Verified</span>
+                          <div className="flex items-center justify-between p-3 bg-green-900/30 border border-green-800 rounded">
+                            <span className="text-sm text-gray-300">john@startup.com</span>
+                            <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded-full">Verified</span>
                           </div>
-                          <div className="flex items-center justify-between p-3 bg-yellow-50 rounded">
-                            <span className="text-sm">unknown@external.com</span>
-                            <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Pending</span>
+                          <div className="flex items-center justify-between p-3 bg-yellow-900/30 border border-yellow-800 rounded">
+                            <span className="text-sm text-gray-300">unknown@external.com</span>
+                            <span className="text-xs bg-yellow-900 text-yellow-300 px-2 py-1 rounded-full">Pending</span>
                           </div>
-                          <div className="flex items-center justify-between p-3 bg-red-50 rounded">
-                            <span className="text-sm">threat@malicious.com</span>
-                            <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Blocked</span>
+                          <div className="flex items-center justify-between p-3 bg-red-900/30 border border-red-800 rounded">
+                            <span className="text-sm text-gray-300">threat@malicious.com</span>
+                            <span className="text-xs bg-red-900 text-red-300 px-2 py-1 rounded-full">Blocked</span>
                           </div>
                         </div>
                       )}
 
                       {index === 1 && (
                         <div className="space-y-3">
-                          <div className="flex items-center justify-between p-3 bg-neutral-50 rounded">
-                            <span className="text-sm">google.com</span>
-                            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Allowed</span>
+                          <div className="flex items-center justify-between p-3 bg-gray-800 border border-gray-700 rounded">
+                            <span className="text-sm text-gray-300">google.com</span>
+                            <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded-full">Allowed</span>
                           </div>
-                          <div className="flex items-center justify-between p-3 bg-red-50 rounded">
-                            <span className="text-sm">malicious-site.com</span>
-                            <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Blocked</span>
+                          <div className="flex items-center justify-between p-3 bg-red-900/30 border border-red-800 rounded">
+                            <span className="text-sm text-gray-300">malicious-site.com</span>
+                            <span className="text-xs bg-red-900 text-red-300 px-2 py-1 rounded-full">Blocked</span>
                           </div>
-                          <div className="flex items-center justify-between p-3 bg-yellow-50 rounded">
-                            <span className="text-sm">social-media.com</span>
-                            <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Limited</span>
+                          <div className="flex items-center justify-between p-3 bg-yellow-900/30 border border-yellow-800 rounded">
+                            <span className="text-sm text-gray-300">social-media.com</span>
+                            <span className="text-xs bg-yellow-900 text-yellow-300 px-2 py-1 rounded-full">Limited</span>
                           </div>
                         </div>
                       )}
@@ -236,18 +236,18 @@ const NetworkSecurity = () => {
                       {index === 2 && (
                         <div className="space-y-3">
                           <div className="grid grid-cols-2 gap-3">
-                            <div className="bg-blue-50 rounded p-2 text-center">
-                              <div className="text-lg font-bold text-blue-600">1.2GB</div>
-                              <div className="text-xs text-neutral-600">Traffic Today</div>
+                            <div className="bg-blue-900/30 border border-blue-800 rounded p-2 text-center">
+                              <div className="text-lg font-bold text-blue-400">1.2GB</div>
+                              <div className="text-xs text-gray-300">Traffic Today</div>
                             </div>
-                            <div className="bg-green-50 rounded p-2 text-center">
-                              <div className="text-lg font-bold text-green-600">15</div>
-                              <div className="text-xs text-neutral-600">Threats Blocked</div>
+                            <div className="bg-green-900/30 border border-green-800 rounded p-2 text-center">
+                              <div className="text-lg font-bold text-green-400">15</div>
+                              <div className="text-xs text-gray-300">Threats Blocked</div>
                             </div>
                           </div>
-                          <div className="flex items-center justify-between p-2 bg-orange-50 rounded">
-                            <span className="text-sm">Unusual traffic detected</span>
-                            <span className="text-xs text-orange-600 font-medium">ALERT</span>
+                          <div className="flex items-center justify-between p-2 bg-orange-900/30 border border-orange-800 rounded">
+                            <span className="text-sm text-gray-300">Unusual traffic detected</span>
+                            <span className="text-xs text-orange-400 font-medium">ALERT</span>
                           </div>
                         </div>
                       )}

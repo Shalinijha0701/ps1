@@ -14,7 +14,7 @@ const FAQAccordion = () => {
       answer: "Absolutely! We specifically designed our platform for startups and growing businesses. Our pricing is startup-friendly, and we offer dedicated support to help small teams get enterprise-level security."
     },
     {
-      question: "What makes Osto.one different?",
+      question: "What makes Osto different?",
       answer: "We provide enterprise-grade cybersecurity that's specifically designed for startups. Unlike complex enterprise solutions, we focus on rapid deployment, affordability, and ease of use without compromising security."
     },
     {

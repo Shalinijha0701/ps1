@@ -127,8 +127,8 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-slate-900/95 backdrop-blur-md shadow-2xl border-b border-slate-800'
-        : 'bg-slate-900/90 backdrop-blur-sm'
+        ? 'bg-black/95 backdrop-blur-md shadow-2xl border-b border-gray-800'
+        : 'bg-black/90 backdrop-blur-sm'
         }`}
     >
       <div className="container-custom">
@@ -137,10 +137,10 @@ const Navigation = () => {
           <Link
             to="/"
             className="flex items-center space-x-3 group"
-            aria-label="Osto.one homepage"
+            aria-label="Osto homepage"
           >
             <div className="text-2xl font-bold text-white font-heading tracking-tight">
-              Osto.one
+              Osto
             </div>
           </Link>
 
@@ -166,14 +166,14 @@ const Navigation = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-80 bg-black rounded-xl shadow-2xl border border-gray-800 overflow-hidden"
                   >
                     <div className="p-4">
                       {solutionsItems.map((item, index) => (
                         <Link
                           key={item.url}
                           to={item.url}
-                          className="block p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200 group"
+                          className="block p-3 rounded-lg hover:bg-gray-900/50 transition-colors duration-200 group"
                         >
                           <div className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
                             {item.label}
@@ -249,7 +249,7 @@ const Navigation = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-slate-800 border-t border-slate-700"
+              className="lg:hidden bg-black border-t border-gray-800"
               role="menu"
               aria-label="Mobile navigation menu"
             >
@@ -287,9 +287,9 @@ const Navigation = () => {
                   About
                 </Link>
 
-                <div className="pt-4 border-t border-slate-700">
-                  <Link to="/demo" className="bg-cyan-400 text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition-colors duration-200 w-full block text-center">
-                    Get Protected
+                <div className="pt-4 border-t border-gray-800">
+                  <Link to="/demo" className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 w-full block text-center">
+                    Start free trial →
                   </Link>
                 </div>
               </div>

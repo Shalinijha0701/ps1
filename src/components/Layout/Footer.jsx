@@ -88,7 +88,7 @@ const Footer = () => {
                     <path d="M12 8L12.5 10.5L15 11L12.5 11.5L12 14L11.5 11.5L9 11L11.5 10.5L12 8Z" />
                   </svg>
                 </div>
-                <span className="text-2xl font-bold font-heading">Osto.one</span>
+                <span className="text-2xl font-bold font-heading">Osto</span>
               </Link>
 
               <p className="text-neutral-300 mb-6 text-sm leading-relaxed">
@@ -113,7 +113,7 @@ const Footer = () => {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span>hello@osto.one</span>
+                  <span>hello@osto.com</span>
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
             {/* Copyright */}
             <div className="text-neutral-400 text-sm">
-              © 2024 Osto.one. All rights reserved.
+              © 2024 Osto. All rights reserved.
             </div>
 
             {/* Certifications */}

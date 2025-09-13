@@ -91,10 +91,10 @@ const ComplianceVAPT = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20"
+      className="min-h-screen pt-20 bg-black"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-slate-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -102,15 +102,15 @@ const ComplianceVAPT = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="hero-title mb-6">
+              <h1 className="hero-title mb-6 text-white">
                 Compliance & VAPT Services
               </h1>
-              <p className="hero-subtitle mb-8">
+              <p className="hero-subtitle mb-8 text-gray-300">
                 Automated compliance management and professional penetration testing to meet regulatory requirements
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-primary">Start Assessment</button>
-                <button className="btn-secondary">Schedule Consultation</button>
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">Start Assessment</button>
+                <button className="bg-transparent text-white border-2 border-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">Schedule Consultation</button>
               </div>
             </motion.div>
 

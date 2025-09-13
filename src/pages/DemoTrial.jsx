@@ -83,10 +83,10 @@ const DemoTrial = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20"
+      className="min-h-screen pt-20 bg-black"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-slate-800">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -94,10 +94,10 @@ const DemoTrial = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="hero-title mb-6">
-              Experience Osto.one Security
+            <h1 className="hero-title mb-6 text-white">
+              Experience Osto Security
             </h1>
-            <p className="hero-subtitle mb-8">
+            <p className="hero-subtitle mb-8 text-gray-300">
               See how enterprise-grade security can be deployed in minutes, not weeks
             </p>
           </motion.div>
@@ -109,12 +109,12 @@ const DemoTrial = () => {
             className="relative max-w-4xl mx-auto"
           >
             {/* Demo preview */}
-            <div className="bg-white rounded-xl shadow-large p-8">
-              <div className="bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg h-64 flex items-center justify-center">
+            <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-8">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg h-64 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">🖥️</div>
-                  <p className="text-neutral-600 text-lg">Interactive Demo Preview</p>
-                  <p className="text-neutral-500 text-sm mt-2">Experience our security platform firsthand</p>
+                  <p className="text-gray-300 text-lg">Interactive Demo Preview</p>
+                  <p className="text-gray-400 text-sm mt-2">Experience our security platform firsthand</p>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ const DemoTrial = () => {
       </section>
 
       {/* Demo Options */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -132,9 +132,9 @@ const DemoTrial = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Choose Your Experience</h2>
-            <p className="section-subtitle">
-              Multiple ways to explore Osto.one security solutions
+            <h2 className="section-title text-white">Choose Your Experience</h2>
+            <p className="section-subtitle text-gray-300">
+              Multiple ways to explore Osto security solutions
             </p>
           </motion.div>
 
@@ -146,27 +146,27 @@ const DemoTrial = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card hover:shadow-large transform hover:-translate-y-2"
+                className="bg-gray-800 border border-gray-700 rounded-xl shadow-large hover:shadow-xl hover:border-cyan-500 transform hover:-translate-y-2 transition-all duration-300 p-6"
               >
                 <div className="text-4xl mb-4">{option.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
-                <p className="text-neutral-600 mb-4">{option.description}</p>
+                <h3 className="text-xl font-semibold mb-2 text-white">{option.title}</h3>
+                <p className="text-gray-300 mb-4">{option.description}</p>
 
                 <div className="space-y-2 mb-6">
                   {option.features.map((feature, i) => (
                     <div key={i} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{feature}</span>
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                      <span className="text-sm text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-sm text-neutral-500">Duration:</span>
-                  <span className="font-medium text-blue-600">{option.duration}</span>
+                  <span className="text-sm text-gray-400">Duration:</span>
+                  <span className="font-medium text-cyan-400">{option.duration}</span>
                 </div>
 
-                <button className="btn-primary w-full">
+                <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 w-full">
                   {option.cta}
                 </button>
               </motion.div>
@@ -176,7 +176,7 @@ const DemoTrial = () => {
       </section>
 
       {/* Lead Generation Form */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12">
             <motion.div
@@ -185,46 +185,46 @@ const DemoTrial = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">Get Started Today</h2>
-              <p className="text-lg text-neutral-600 mb-8">
+              <h2 className="text-3xl font-bold mb-6 text-white">Get Started Today</h2>
+              <p className="text-lg text-gray-300 mb-8">
                 Tell us about your security needs and we'll provide personalized recommendations and access to our platform.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 bg-green-900/50 border border-green-800 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Instant Setup</h3>
-                    <p className="text-neutral-600 text-sm">Get protected in 9 minutes</p>
+                    <h3 className="font-semibold text-white">Instant Setup</h3>
+                    <p className="text-gray-300 text-sm">Get protected in 9 minutes</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 bg-blue-900/50 border border-blue-800 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Enterprise Grade</h3>
-                    <p className="text-neutral-600 text-sm">SOC 2 compliant security</p>
+                    <h3 className="font-semibold text-white">Enterprise Grade</h3>
+                    <p className="text-gray-300 text-sm">SOC 2 compliant security</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-12 h-12 bg-purple-900/50 border border-purple-800 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                       <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Expert Support</h3>
-                    <p className="text-neutral-600 text-sm">24/7 security team assistance</p>
+                    <h3 className="font-semibold text-white">Expert Support</h3>
+                    <p className="text-gray-300 text-sm">24/7 security team assistance</p>
                   </div>
                 </div>
               </div>
@@ -235,9 +235,9 @@ const DemoTrial = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="card"
+              className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-6"
             >
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">Contact Information</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">

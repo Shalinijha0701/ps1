@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://osto.one/sitemap.xml
+Sitemap: https://osto.com/sitemap.xml
 
 # Block common paths that don't exist or shouldn't be crawled
 Disallow: /api/

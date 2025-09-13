@@ -63,9 +63,9 @@ const AboutUs = () => {
   ]
 
   const offices = [
-    { location: "New York", email: "ny@osto.one" },
-    { location: "Austin", email: "austin@osto.one" },
-    { location: "London", email: "london@osto.one" }
+    { location: "New York", email: "ny@osto.com" },
+    { location: "Austin", email: "austin@osto.com" },
+    { location: "London", email: "london@osto.com" }
   ]
 
   return (
@@ -74,10 +74,10 @@ const AboutUs = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20"
+      className="min-h-screen pt-20 bg-black"
     >
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-slate-800">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -85,10 +85,10 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="hero-title mb-6">
+            <h1 className="hero-title mb-6 text-white">
               Empowering Startups with Enterprise-Grade Security
             </h1>
-            <p className="hero-subtitle mb-8 max-w-4xl mx-auto">
+            <p className="hero-subtitle mb-8 max-w-4xl mx-auto text-gray-300">
               Founded by cybersecurity experts who understand the unique challenges startups face in building secure, compliant, and scalable businesses
             </p>
           </motion.div>
@@ -100,11 +100,11 @@ const AboutUs = () => {
             className="relative max-w-4xl mx-auto"
           >
             {/* Team photo placeholder */}
-            <div className="bg-white rounded-xl shadow-large p-8">
-              <div className="bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg h-64 flex items-center justify-center">
+            <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-8">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg h-64 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">👥</div>
-                  <p className="text-neutral-600">Our Security-First Team</p>
+                  <p className="text-gray-300">Our Security-First Team</p>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ const AboutUs = () => {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-900">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16">
             <motion.div
@@ -122,13 +122,13 @@ const AboutUs = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-lg text-neutral-600 mb-8">
+              <h2 className="text-3xl font-bold mb-6 text-white">Our Mission</h2>
+              <p className="text-lg text-gray-300 mb-8">
                 To democratize enterprise-grade cybersecurity for startups, making advanced protection accessible and affordable for every growing business.
               </p>
 
-              <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-              <p className="text-lg text-neutral-600">
+              <h2 className="text-3xl font-bold mb-6 text-white">Our Vision</h2>
+              <p className="text-lg text-gray-300">
                 A world where cybersecurity never holds back innovation or growth for startups.
               </p>
             </motion.div>
@@ -139,14 +139,14 @@ const AboutUs = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-8">Our Values</h2>
+              <h2 className="text-3xl font-bold mb-8 text-white">Our Values</h2>
               <div className="space-y-6">
                 {values.map((value, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="text-2xl">{value.icon}</div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2">{value.name}</h3>
-                      <p className="text-neutral-600">{value.description}</p>
+                      <h3 className="text-lg font-semibold mb-2 text-white">{value.name}</h3>
+                      <p className="text-gray-300">{value.description}</p>
                     </div>
                   </div>
                 ))}
@@ -157,7 +157,7 @@ const AboutUs = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -166,8 +166,8 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Leadership Team</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title text-white">Leadership Team</h2>
+            <p className="section-subtitle text-gray-300">
               Security experts with deep startup experience and a passion for democratizing cybersecurity
             </p>
           </motion.div>
@@ -180,22 +180,22 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card text-center"
+                className="bg-gray-900 border border-gray-800 rounded-xl shadow-large hover:shadow-xl hover:border-cyan-500 transform hover:-translate-y-2 transition-all duration-300 p-6 text-center"
               >
                 {/* Profile image placeholder */}
-                <div className="w-24 h-24 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
+                <div className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-2xl text-white">{member.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-primary-600 font-medium mb-4">{member.role}</p>
-                <p className="text-neutral-600 mb-4">{member.bio}</p>
+                <h3 className="text-xl font-semibold mb-2 text-white">{member.name}</h3>
+                <p className="text-cyan-400 font-medium mb-4">{member.role}</p>
+                <p className="text-gray-300 mb-4">{member.bio}</p>
 
                 <div className="mb-4">
-                  <h4 className="font-medium text-neutral-900 mb-2">Expertise:</h4>
+                  <h4 className="font-medium text-white mb-2">Expertise:</h4>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {member.expertise.map((skill, i) => (
-                      <span key={i} className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
+                      <span key={i} className="text-xs bg-cyan-900 text-cyan-300 px-2 py-1 rounded-full">
                         {skill}
                       </span>
                     ))}
@@ -218,7 +218,7 @@ const AboutUs = () => {
       </section>
 
       {/* Company Stats */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-900">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -227,8 +227,8 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Osto.one by the Numbers</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title text-white">Osto by the Numbers</h2>
+            <p className="section-subtitle text-gray-300">
               The impact we're making in the cybersecurity space
             </p>
           </motion.div>
@@ -241,13 +241,13 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card text-center hover:shadow-large transform hover:-translate-y-2"
+                className="bg-gray-800 border border-gray-700 rounded-xl shadow-large hover:shadow-xl hover:border-cyan-500 transform hover:-translate-y-2 transition-all duration-300 p-6 text-center"
               >
-                <div className="text-4xl lg:text-5xl font-bold text-primary-600 mb-2">
+                <div className="text-4xl lg:text-5xl font-bold text-cyan-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="font-semibold text-neutral-900 mb-2">{stat.label}</div>
-                <div className="text-sm text-neutral-600">{stat.description}</div>
+                <div className="font-semibold text-white mb-2">{stat.label}</div>
+                <div className="text-sm text-gray-300">{stat.description}</div>
               </motion.div>
             ))}
           </div>
@@ -255,7 +255,7 @@ const AboutUs = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-black">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -264,8 +264,8 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="section-title">Get in Touch</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title text-white">Get in Touch</h2>
+            <p className="section-subtitle text-gray-300">
               Ready to discuss your cybersecurity needs? We're here to help
             </p>
           </motion.div>
@@ -277,34 +277,34 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="card"
+              className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-6"
             >
-              <h3 className="text-xl font-semibold mb-6">Headquarters</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">Headquarters</h3>
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <svg className="w-5 h-5 text-primary-600 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-cyan-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <p className="font-medium">123 Security Street</p>
-                    <p className="text-neutral-600">San Francisco, CA 94102</p>
+                    <p className="font-medium text-white">123 Security Street</p>
+                    <p className="text-gray-300">San Francisco, CA 94102</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  <span>+1 (555) 123-4567</span>
+                  <span className="text-gray-300">+1 (555) 123-4567</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span>hello@osto.one</span>
+                  <span className="text-gray-300">hello@osto.com</span>
                 </div>
               </div>
             </motion.div>
@@ -315,17 +315,17 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="card"
+              className="bg-gray-900 border border-gray-800 rounded-xl shadow-large p-6"
             >
-              <h3 className="text-xl font-semibold mb-6">Regional Offices</h3>
+              <h3 className="text-xl font-semibold mb-6 text-white">Regional Offices</h3>
 
               <div className="space-y-4">
                 {offices.map((office, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
-                    <span className="font-medium">{office.location}</span>
+                  <div key={index} className="flex items-center justify-between p-3 bg-gray-800 rounded-lg">
+                    <span className="font-medium text-white">{office.location}</span>
                     <a
                       href={`mailto:${office.email}`}
-                      className="text-primary-600 hover:text-primary-700 transition-colors duration-200"
+                      className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
                     >
                       {office.email}
                     </a>
@@ -333,8 +333,8 @@ const AboutUs = () => {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-primary-50 rounded-lg">
-                <p className="text-sm text-primary-700">
+              <div className="mt-6 p-4 bg-cyan-900/20 border border-cyan-800 rounded-lg">
+                <p className="text-sm text-cyan-300">
                   <strong>Global Support:</strong> Our team provides 24/7 support across all time zones to ensure your security never sleeps.
                 </p>
               </div>
@@ -346,7 +346,7 @@ const AboutUs = () => {
       {/* CTA Section */}
       <CTASection
         title="Ready to Partner with Us?"
-        description="Join the hundreds of startups who trust Osto.one for their cybersecurity needs"
+        description="Join the hundreds of startups who trust Osto for their cybersecurity needs"
       />
     </motion.div>
   )
