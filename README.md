@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Osto.one Cybersecurity Website
 
 A modern, responsive website built for Osto.one - a cybersecurity startup focused on providing enterprise-grade security solutions for startups.
