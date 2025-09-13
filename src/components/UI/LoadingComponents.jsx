@@ -5,20 +5,21 @@ const ProgressBar = ({ progress = 0, className = '', showPercentage = true }) =>
   return (
     <div className={`w-full ${className}`}>
       <div className=\"flex justify-between items-center mb-2\">
-        <span className=\"text-sm font-medium text-neutral-700\">Loading...</span>
-        {showPercentage && (
-          <span className=\"text-sm text-neutral-500\">{Math.round(progress)}%</span>
+      <span className=\"text-sm font-medium text-neutral-700\">Loading...</span>
+        {
+    showPercentage && (
+      <span className=\"text-sm text-neutral-500\">{Math.round(progress)}%</span>
         )}
-      </div>
-      <div className=\"w-full bg-neutral-200 rounded-full h-2\">
-        <motion.div
-          className=\"bg-primary-600 h-2 rounded-full\"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
+      </div >
+  <div className=\"w-full bg-neutral-200 rounded-full h-2\">
+    < motion.div
+className =\"bg-primary-600 h-2 rounded-full\"
+initial = {{ width: 0 }}
+animate = {{ width: `${progress}%` }}
+transition = {{ duration: 0.3, ease: 'easeOut' }}
         />
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
@@ -44,7 +45,7 @@ const LoadingState = ({ type = 'spinner', message = 'Loading...', className = ''
     <div className={`flex flex-col items-center justify-center p-8 ${className}`}>
       <div className=\"w-8 h-8 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin mb-4\" />
       <p className=\"text-neutral-600\">{message}</p>
-    </div>
+    </div >
   )
 }
 
