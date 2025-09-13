@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Osto.one Cybersecurity Website
 
 A modern, responsive website built for Osto.one - a cybersecurity startup focused on providing enterprise-grade security solutions for startups.
@@ -116,6 +117,11 @@ The website has been tested across:
 - **Browsers**: Chrome, Firefox, Safari, Edge (latest 2 versions)
 - **Devices**: Mobile (320px+), Tablet (768px+), Desktop (1024px+)
 - **Performance**: Lighthouse audits and WebPageTest analysis
+=======
+# ps1
+
+
+>>>>>>> c48bf90e25868b35e1312cc28c83010c91f70975
 
 ## Getting started
 
@@ -206,4 +212,7 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+<<<<<<< HEAD
 >>>>>>> 29d84a85adf664303e1cf8321243b8dcde3a7bb4
+=======
+>>>>>>> c48bf90e25868b35e1312cc28c83010c91f70975
